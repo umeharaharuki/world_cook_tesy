@@ -12,41 +12,42 @@
     
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-
-    <%= link_to "商品の編集", edit_cook_path , method: :get, class: "item-red-btn" %>
+<% if user_signed_in? && current_user.id == @cook.user_id %>
+    <%= link_to "料理の編集", edit_cook_path , method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削除", cook_path , method: :delete, class:"item-destroy" %>
-
+<% elsif user_signed_in? %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <%= link_to "レビューを書く", "#" ,class:"item-red-btn"%>
     <%# //商品が売れていない場合はこちらを表示しましょう %>
+<% end %>
 
 
     <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
     <div class="item-explain-box">
-      <span><%= "商品説明" %></span>
+      <span><%= "料理説明" %></span>
     </div>
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <th class="detail-item">投稿者</th>
           <td class="detail-value"><%= @cook.user.nickname %></td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
+          <th class="detail-item">国名🌍</th>
           <td class="detail-value"><%= @cook.country.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">量</th>
           <td class="detail-value"><%= @cook.serving.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <th class="detail-item">材料</th>
           <td class="detail-value"><%=  @cook.material %></td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
+          <th class="detail-item">レシピ</th>
           <td class="detail-value"><%= @cook.recipe %></td>
         </tr>
         
