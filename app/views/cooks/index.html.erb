@@ -6,16 +6,7 @@
     <h2 class='service-title'>
       人生を変えるフリマアプリ
     </h2>
-    <p class='service-explain'>
-      FURIMAはだれでもかんたんに出品・購入できる
-    </p>
-    <p class='service-explain'>
-      フリマアプリです
-    </p>
-    <div class='store-btn'>
-      <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
-      <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
-    </div>
+    
   </div>
   <%# /画面上部の「人生を変えるフリマアプリ」帯部分  %>
 
@@ -23,7 +14,7 @@
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
     <div class="subtitle" >
-      新規投稿商品
+      新規投稿料理
     </div>
     <ul class='item-lists'>
      <% if @cooks.present? %>
@@ -56,7 +47,7 @@
         <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
         <div class='item-info'>
           <h3 class='item-name'>
-            商品を出品してね！
+            料理を投稿してね！
           </h3>
           <div class='item-price'>
             <span>99999999円<br>(税込み)</span>
