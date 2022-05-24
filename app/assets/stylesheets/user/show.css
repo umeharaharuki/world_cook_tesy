@@ -1,0 +1,32 @@
+.tabl__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid #2f2727;
+  width: 30%;
+  padding: 8px;
+}
+.able__col2{
+  text-align: left;
+  border: 1px solid #2f2727;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+}
+.user__wrappe{
+  min-height: calc(100vh - 161px);
+}
+.tabl{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.inne {
+  width: 1024px;
+  margin: 0 auto;
+}
+.page-headng {
+  font-size: 30px;
+  margin-bottom: 28px;
+}

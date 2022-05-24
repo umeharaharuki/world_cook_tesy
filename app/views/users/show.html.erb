@@ -1,0 +1,21 @@
+<%= render "shared/second-header" %>
+<div class="main">
+  <div class="inne">
+    <div class="user__wrappe">
+      <h2 class="page-headng">
+        <%= @user.nickname%>さんの情報
+      </h2>
+      <table class="tabl">
+        <tbody>
+          <tr>
+            <th class="tabl__col1">名前</th>
+            <td class="able__col2"><%= @user.nickname %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-headng">
+        <%= @user.nickname%>さんのレシピ
+      </h2>
+    </div>
+  </div>
+</div>
