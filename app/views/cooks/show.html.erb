@@ -65,7 +65,8 @@
     </div>
   </div>
   <%# /商品の概要 %>
-
+<%= form_with model: [@cook, @review], local: true do |f|%>
+        <%= f.collection_select(:star_id, Star.all, :id, :name , {}, {class:"select-box", id:"item-category"}) %>
   <div class="comment-box">
     <form>
       <textarea class="comment-text"></textarea>
@@ -81,6 +82,7 @@
       </button>
     </form>
   </div>
+  <% end %>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
