@@ -13,9 +13,9 @@
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 <% if user_signed_in? && current_user.id == @cook.user_id %>
-    <%= link_to "料理の編集", edit_cook_path , method: :get, class: "item-red-btn" %>
+    <%= link_to "料理の編集", edit_cook_path(@cook.id) , method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", cook_path , method: :delete, class:"item-destroy" %>
+    <%= link_to "削除", cook_path(@cook.id) , method: :delete, class:"item-destroy" %>
 <% elsif user_signed_in? %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
     <%= link_to "レビューを書く", "#" ,class:"item-red-btn"%>
@@ -65,22 +65,22 @@
     </div>
   </div>
   <%# /商品の概要 %>
-
+<% if user_signed_in? %>
   <div class="comment-box">
    <%= form_with model: [@cook, @review], local: true do |f|%>
+   <%= f.label :comment, "レビュー" %><br />
         <%= f.collection_select(:star_id, Star.all, :id, :name , {}, {class:"select-box", id:"item-category"}) %>
     
       <div class="field">
-              <%= f.label :comment, "レビュー" %><br />
-              <%= f.text_field :comment, id:"comment_content" %>
+              <%= f.text_area :comment, id:"comment_content",class: :comment_text %>
             </div>
             <div class="actions">
-            <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
               <%= f.submit "送信する", class: :form__btn  %>
             </div>
     
       </div>
   <% end %>
+  
   <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @reviews.each do |review| %>
@@ -93,6 +93,7 @@
             </li>
             <% end %>
             </ul>
+             <% end %>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
