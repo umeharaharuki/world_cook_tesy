@@ -44,11 +44,11 @@
         </tr>
         <tr>
           <th class="detail-item">材料</th>
-          <td class="detail-value"><%=  @cook.material %></td>
+          <td class="detail-value"><%=  simple_format(@cook.material) %></td>
         </tr>
         <tr>
           <th class="detail-item">レシピ</th>
-          <td class="detail-value"><%= @cook.recipe %></td>
+          <td class="detail-value"><%= simple_format(@cook.recipe) %></td>
         </tr>
         
       </tbody>
@@ -88,7 +88,7 @@
           <%= review.star.name %>
             </li>
             <li class="comments_list2">
-             <%= review.comment %>
+             <%= simple_format(review.comment) %>
               <%= link_to review.user.nickname, user_path(review.user_id), class: :comment_user %>
             </li>
             <% end %>
