@@ -152,7 +152,7 @@
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: solid 2px #dedede;
+  border: solid 2px #ffb340;
   resize: none;
 }
 
@@ -165,8 +165,8 @@
 
 .form__btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: #ffb340;
+  border: #ffb340;
   color: #fff;
   width: 50%;
   min-width: 150px;
@@ -209,7 +209,19 @@
 
 .comments_list {
   text-align: center;
-  background-color: rgb(227, 220, 220);
-  padding-bottom: 5px;
-  border: 1px solid #fff;
+  background-color: #ffb340;
+  border-radius: 20px 20px 0 0;
+}
+
+.comments_lists {
+  height: calc(20vh - 20px);
+  overflow: scroll;
+  border-radius: 10px;
+}
+
+.comments_list2 {
+  text-align: center;
+  background-color: #ffb340;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 10px;
 }
