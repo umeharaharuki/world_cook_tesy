@@ -22,7 +22,7 @@ class CooksController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = @cook.reviews.includes(:user)
+    @reviews = @cook.reviews.includes(:user).order('created_at DESC')
   end
 
   def edit

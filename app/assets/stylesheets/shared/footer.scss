@@ -29,6 +29,8 @@
 /* //下部広告部分 */
 
 .footer {
+  background-image: image-url('niji.jpeg');
+  background-size: cover;
   width: 100vw;
   padding: 5vh 0;
   color: #FFF;
@@ -59,7 +61,7 @@
 }
 
 .logo-white {
-  width: 20vh;
+  width: 60vh;
   vertical-align: bottom;
 }
 
