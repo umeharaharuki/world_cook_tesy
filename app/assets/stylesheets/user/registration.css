@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 800px;
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: #ffd900;
   display: flex;
   justify-content: center;
 }
@@ -12,6 +12,7 @@
   width: 50%;
   background-color: white;
   padding-bottom: 70px;
+  border-radius: 30px;
 }
 
 .form-header {
