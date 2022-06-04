@@ -2,9 +2,16 @@ class CooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_cook, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
+  before_action :search
 
   def index
     @cooks = Cook.includes(:user).order('created_at DESC')
+    @cooks = @q.result(distinct: true)
+  end
+
+  def search
+    # params[:q]のqには検索フォームに入力した値が入る
+    @q = Cook.ransack(params[:q])
   end
 
   def new
